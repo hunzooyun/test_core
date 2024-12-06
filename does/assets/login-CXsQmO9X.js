@@ -1,4 +1,4 @@
-import{r as d,i as p,a as c,p as u,S as s,x as h,t as m}from"./Header-B6Ex6Cqr.js";var g=Object.defineProperty,b=Object.getOwnPropertyDescriptor,f=(t,r,i,o)=>{for(var e=o>1?void 0:o?b(r,i):r,n=t.length-1,l;n>=0;n--)(l=t[n])&&(e=(o?l(r,i,e):l(e))||e);return o&&e&&g(r,i,e),e};let a=class extends c{get idInput(){return this.renderRoot.querySelector("#idField")}get pwInput(){return this.renderRoot.querySelector("#pwField")}async fetchData(){try{const t=this.idInput.value,r=this.pwInput.value;await u.collection("users").authWithPassword(t,r);const{record:i,token:o}=JSON.parse(localStorage.getItem("pocketbase_auth")??"{}");localStorage.setItem("auth",JSON.stringify({isAuth:!!i,user:i,token:o})),s.fire({title:"로그인 성공!",text:"메인 페이지로 이동합니다.",icon:"success",confirmButtonText:"닫기"}).then(()=>{setTimeout(()=>{location.href="/index.html"},300)})}catch{s.fire({title:"로그인 실패!",text:"아이디 또는 비밀번호가 올바르지 않습니다.",icon:"error",confirmButtonText:"닫기"}).then(()=>{this.idInput.value="",this.pwInput.value=""})}}handleLogin(t){t.preventDefault(),this.fetchData()}render(){return h`
+import{r as d,i as p,b as c,p as u,S as a,x as h,t as m}from"./Header-DPWX78Ld.js";var g=Object.defineProperty,b=Object.getOwnPropertyDescriptor,f=(t,r,i,o)=>{for(var e=o>1?void 0:o?b(r,i):r,n=t.length-1,l;n>=0;n--)(l=t[n])&&(e=(o?l(r,i,e):l(e))||e);return o&&e&&g(r,i,e),e};let s=class extends c{get idInput(){return this.renderRoot.querySelector("#idField")}get pwInput(){return this.renderRoot.querySelector("#pwField")}async fetchData(){try{const t=this.idInput.value,r=this.pwInput.value;await u.collection("users").authWithPassword(t,r);const{record:i,token:o}=JSON.parse(localStorage.getItem("pocketbase_auth")??"{}");localStorage.setItem("auth",JSON.stringify({isAuth:!!i,user:i,token:o})),a.fire({title:"로그인 성공!",text:"메인 페이지로 이동합니다.",icon:"success",confirmButtonText:"닫기"}).then(()=>{setTimeout(()=>{location.href="/index.html"},300)})}catch{a.fire({title:"로그인 실패!",text:"아이디 또는 비밀번호가 올바르지 않습니다.",icon:"error",confirmButtonText:"닫기"}).then(()=>{this.idInput.value="",this.pwInput.value=""})}}handleLogin(t){t.preventDefault(),this.fetchData()}render(){return h`
       <div class="container">
         <h1>로그인</h1>
         <hr />
@@ -19,7 +19,7 @@ import{r as d,i as p,a as c,p as u,S as s,x as h,t as m}from"./Header-B6Ex6Cqr.j
 
         <a class="register" href="/src/pages/register/">간편 회원가입</a>
       </div>
-    `}};a.styles=[d,p`
+    `}};s.styles=[d,p`
       .container {
         max-width: 400px;
         position: absolute;
@@ -66,4 +66,4 @@ import{r as d,i as p,a as c,p as u,S as s,x as h,t as m}from"./Header-B6Ex6Cqr.j
           }
         }
       }
-    `];a=f([m("login-element")],a);
+    `];s=f([m("login-element")],s);
